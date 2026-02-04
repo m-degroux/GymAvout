@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gym_dark_bg"
+    tools:context=".profil_page">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gym_green_primary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mon Profil"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_parameters"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gym_card_bg"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="88dp"
+                        android:layout_height="88dp"
+                        android:padding="2dp"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/CircleImage"
+                        app:strokeWidth="2dp"
+                        tools:src="@tools:sample/avatars" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toStartOf="@+id/btnEdit"
+                        android:layout_toEndOf="@id/profileImage"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Alex Moreau"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:drawablePadding="6dp"
+                            android:gravity="center_vertical"
+                            android:text="Paris, France"
+                            android:textColor="#9CA3AF"
+                            android:textSize="13sp"
+                            app:drawableStartCompat="@drawable/ic_location_scaled"
+                            app:drawableTint="#9CA3AF" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:drawablePadding="6dp"
+                            android:gravity="center_vertical"
+                            android:text="Membre depuis Janvier 2025"
+                            android:textColor="#9CA3AF"
+                            android:textSize="13sp"
+                            app:drawableStartCompat="@drawable/ic_calendar_scaled"
+                            app:drawableTint="#9CA3AF" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btnEdit"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="4dp"
+                        android:src="@drawable/ic_edit"
+                        app:tint="#9CA3AF" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Passionné de sport et toujours partant pour découvrir de nouvelles activités!"
+                    android:textColor="#E5E7EB"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        style="@style/StatCardBase"
+                        android:background="@drawable/bg_stat_teal">
+
+                        <ImageView
+                            style="@style/StatIconStyle"
+                            android:src="@drawable/ic_share_scaled"
+                            tools:src="@drawable/ic_trophy" />
+
+                        <TextView
+                            style="@style/StatValueStyle"
+                            android:text="24" />
+
+                        <TextView
+                            style="@style/StatLabelStyle"
+                            android:text="Participations" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/StatCardBase"
+                        android:background="@drawable/bg_stat_teal">
+
+                        <ImageView
+                            style="@style/StatIconStyle"
+                            android:src="@drawable/ic_calendar_scaled"
+                            tools:src="@drawable/ic_menu_my_calendar" />
+
+                        <TextView
+                            style="@style/StatValueStyle"
+                            android:text="8" />
+
+                        <TextView
+                            style="@style/StatLabelStyle"
+                            android:text="Créées" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/StatCardBase"
+                        android:background="@drawable/bg_stat_brown">
+
+                        <ImageView
+                            style="@style/StatIconStyle"
+                            android:src="@drawable/ic_star"
+                            app:tint="#FFB300" />
+
+                        <TextView
+                            style="@style/StatValueStyle"
+                            android:text="4.8" />
+
+                        <TextView
+                            style="@style/StatLabelStyle"
+                            android:text="Note moyenne" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#2D3748" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gym_card_bg"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sports pratiqués"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/SportChipStyle"
+                        android:text="Football" />
+
+                    <TextView
+                        style="@style/SportChipStyle"
+                        android:text="Running" />
+
+                    <TextView
+                        style="@style/SportChipStyle"
+                        android:text="Natation" />
+
+                    <TextView
+                        style="@style/SportChipStyle"
+                        android:text="Tennis" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Niveau: "
+                        android:textColor="#B0BEC5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="Intermédiaire"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gym_dark_bg"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Mes activités"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView style="@style/ActivityCardStyle">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/title1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Session de Tennis"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:background="@drawable/bg_badge_future"
+                                android:paddingStart="12dp"
+                                android:paddingTop="4dp"
+                                android:paddingEnd="12dp"
+                                android:paddingBottom="4dp"
+                                android:text="À venir"
+                                android:textColor="@color/gym_green_accent"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/sub1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/title1"
+                                android:layout_marginTop="4dp"
+                                android:text="Tennis"
+                                android:textColor="#B0BEC5" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/sub1"
+                                android:layout_marginTop="16dp"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:src="@drawable/ic_menu_my_calendar"
+                                    app:tint="@color/gym_green_accent"
+                                    tools:src="@drawable/ic_menu_my_calendar" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:text="5 février 2026 à 14:00"
+                                    android:textColor="#B0BEC5"
+                                    android:textSize="13sp" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/ActivityCardStyle"
+                        android:layout_marginTop="16dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/title2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Course matinale 5km"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:background="@drawable/bg_badge_future"
+                                android:paddingStart="12dp"
+                                android:paddingTop="4dp"
+                                android:paddingEnd="12dp"
+                                android:paddingBottom="4dp"
+                                android:text="À venir"
+                                android:textColor="@color/gym_green_accent"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/sub2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/title2"
+                                android:layout_marginTop="4dp"
+                                android:text="Running"
+                                android:textColor="#B0BEC5" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/sub2"
+                                android:layout_marginTop="16dp"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:src="@drawable/ic_calendar_scaled"
+                                    app:tint="@color/gym_green_accent"
+                                    tools:src="@drawable/ic_menu_my_calendar" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:text="26 Janvier 2026 à 07:00"
+                                    android:textColor="#B0BEC5"
+                                    android:textSize="13sp" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gym_card_bg"
+        app:itemIconTint="@color/gym_green_accent"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

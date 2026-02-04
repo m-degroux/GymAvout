@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".add_page"
+    android:background="@color/gym_dark_bg">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gym_green_primary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Créer une activité"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout style="@style/FormContainerStyle"
+                app:cardBackgroundColor="@color/gym_card_bg">
+                <TextView style="@style/LabelStyle" android:text="Titre de l'activité *"
+                    app:cardBackgroundColor="@color/gym_card_bg"/>
+                <EditText
+                    style="@style/InputStyle"
+                    android:hint="Ex: Match de foot amical"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/FormContainerStyle">
+                <TextView style="@style/LabelStyle" android:text="Sport *" />
+                <Spinner
+                    android:id="@+id/sportSpinner"
+                    style="@style/InputStyle"
+                    android:entries="@array/sport_array"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/FormContainerStyle">
+                <TextView style="@style/LabelStyle" android:text="Description *" />
+                <EditText
+                    style="@style/InputStyle"
+                    android:layout_height="wrap_content"
+                    android:minHeight="80dp"
+                    android:gravity="top"
+                    android:hint="Décrivez votre activité..."
+                    android:lines="4"
+                    android:paddingTop="12dp" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/FormContainerStyle">
+                <TextView style="@style/LabelStyle"
+                    android:text="Lieu *"
+                    app:drawableStartCompat="@drawable/ic_location_scaled" />
+                <EditText style="@style/InputStyle" android:hint="Ex: Stade Municipal, Paris 15ème" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout style="@style/FormContainerStyle" android:layout_width="0dp" android:layout_weight="1" android:layout_marginEnd="8dp">
+                    <TextView style="@style/LabelStyle" android:text="Date *"
+                        app:drawableStartCompat="@drawable/ic_calendar_scaled" />
+                    <EditText style="@style/InputStyle" android:hint="jj / mm / aaaa" android:focusable="false" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormContainerStyle" android:layout_width="0dp" android:layout_weight="1" android:layout_marginStart="8dp">
+                    <TextView style="@style/LabelStyle" android:text="Heure *"
+                        app:drawableStartCompat="@drawable/ic_time_scaled" />
+                    <EditText style="@style/InputStyle" android:hint="-- : --" android:focusable="false" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/FormContainerStyle">
+                <TextView style="@style/LabelStyle" android:text="Nombre maximum de participants *"
+                    app:drawableStartCompat="@drawable/ic_share_scaled" />
+                <EditText style="@style/InputStyle" android:hint="Ex: 10" android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/FormContainerStyle">
+                <TextView
+                    style="@style/LabelStyle"
+                    android:text="Niveau requis *"
+                    app:drawableStartCompat="@drawable/ic_medal_scaled"
+                    app:drawableTint="@color/gym_green_accent" />
+                <Spinner
+                    android:id="@+id/spinnerLevels"
+                    style="@style/InputStyle"
+                    android:entries="@array/levels_array"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/FormContainerStyle">
+                <TextView style="@style/LabelStyle" android:text="Prérequis" />
+                <EditText
+                    style="@style/InputStyle"
+                    android:layout_height="wrap_content"
+                    android:minHeight="60dp"
+                    android:gravity="top"
+                    android:hint="Ex: Chaussures de sport, bouteille d'eau"
+                    android:lines="3"
+                    android:paddingTop="12dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Séparez chaque prérequis par une virgule"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnPublish"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/gym_green_primary"
+                android:text="Publier l'activité"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="32dp"
+                android:text="* Champs obligatoires"
+                android:textColor="@color/text_gray"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gym_card_bg"
+        app:itemIconTint="@color/gym_green_accent"
+        app:itemTextColor="@color/text_white"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

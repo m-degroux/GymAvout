@@ -1,0 +1,108 @@
+
+<resources xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <style name="Theme.GymAvout" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/gym_green_primary</item>
+        <item name="colorPrimaryVariant">@color/gym_green_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/gym_green_accent</item>
+        <item name="android:statusBarColor">@color/gym_green_primary</item>
+    </style>
+
+    <style name="LabelStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="CircleImage">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="StatCardStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">@drawable/search_bar_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="StatValueStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="StatLabelStyle">
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ActivityCardStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/gym_card_bg</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">#37474F</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="StatIconStyle">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:tint">@color/gym_green_accent</item>
+    </style>
+
+    <style name="SportChipStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:background">@drawable/bg_sport_chip</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textColor">@color/gym_green_accent</item> <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="FormContainerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/card_background</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    <style name="InputStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/input_field_bg</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">#80FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="StatCardBase">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">110dp</item> <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+</resources>
