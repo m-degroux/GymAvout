@@ -11,18 +11,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GymAvout">
-
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.GymAvout">
+            android:name=".Start"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".SetupProfileActivity"
+            android:exported="false"
+            android:label="Configuration du profil" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="Paramètres" />
     </application>
 
 </manifest>

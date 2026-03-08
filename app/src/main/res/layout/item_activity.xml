@@ -32,23 +32,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="8dp"
-            android:text="Session de Football 5v5"
-            android:textColor="@color/text_white"
+            android:text="Titre"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/badgeCategory"
             app:layout_constraintStart_toEndOf="@id/imgUser"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/txtUserName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Marc Dubois"
-            android:textColor="@color/text_gray"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@id/txtActivityTitle"
-            app:layout_constraintTop_toBottomOf="@id/txtActivityTitle" />
 
         <TextView
             android:id="@+id/badgeCategory"
@@ -57,7 +47,7 @@
             android:background="@drawable/bg_stat_teal"
             android:paddingHorizontal="8dp"
             android:paddingVertical="4dp"
-            android:text="Football"
+            android:text="Sport"
             android:textColor="@color/gym_green_accent"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,8 +60,8 @@
             android:layout_marginTop="16dp"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="Match amical de football, tous niveaux bienvenus. Ambiance conviviale garantie!"
-            android:textColor="@color/text_white"
+            android:text="Description..."
+            android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -96,14 +86,15 @@
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:src="@drawable/ic_menu_mylocation"
+                    android:src="@android:drawable/ic_menu_mylocation"
                     app:tint="@color/gym_green_accent" />
 
                 <TextView
+                    android:id="@+id/txtActivityLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Stade Municipal, Paris 15ème"
+                    android:text="Lieu"
                     android:textColor="@color/text_gray"
                     android:textSize="13sp" />
             </LinearLayout>
@@ -118,14 +109,15 @@
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:src="@drawable/ic_menu_my_calendar"
+                    android:src="@android:drawable/ic_menu_my_calendar"
                     app:tint="@color/gym_green_accent" />
 
                 <TextView
+                    android:id="@+id/txtActivityDateTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="mer. 28 janvier à 18:00"
+                    android:text="Date et Heure"
                     android:textColor="@color/text_gray"
                     android:textSize="13sp" />
             </LinearLayout>
@@ -140,14 +132,15 @@
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:src="@drawable/ic_menu_share"
+                    android:src="@android:drawable/ic_menu_share"
                     app:tint="@color/gym_green_accent" />
 
                 <TextView
+                    android:id="@+id/txtActivityParticipants"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="7/10 participants"
+                    android:text="0 participants"
                     android:textColor="@color/text_gray"
                     android:textSize="13sp" />
             </LinearLayout>
@@ -161,7 +154,7 @@
             android:background="@drawable/badge_level_bg"
             android:paddingHorizontal="8dp"
             android:paddingVertical="4dp"
-            android:text="Tous niveaux"
+            android:text="Niveau"
             android:textColor="@color/text_gray"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"

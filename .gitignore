@@ -1,6 +1,8 @@
+# Fichiers de projet Android Studio et Gradle
 *.iml
 .gradle
 /local.properties
+/.idea/git
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -13,3 +15,22 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Fichiers de compilation et de sortie
+build/
+app/build/
+*.class
+*.apk
+*.aar
+
+# Fichiers logs
+*.log
+
+# Fichiers Kotlin / Java
+.kotlin/
+.idea/kotlinPolyglot.xml
+
+# Secrets et configurations spécifiques à l'utilisateur
+google-services.json
+.DS_Store
+Thumbs.db

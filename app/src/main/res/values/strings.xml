@@ -1,25 +1,5 @@
 <resources>
     <string name="app_name">GymAvout</string>
-
-    <!-- home page -->
-    <string name="title_Home_activity_main">Home page</string>
-    <string name="Home_activity_search">Rechercher une activité&#8230;</string>
-
-    <!-- message page -->
-    <string name="title_message_activity_main">Message page</string>
-    <string name="_message_activity_name">Message</string>
     <string name="title_messages">Messages</string>
-    <string name="message_activity_search">Rechercher une conversation&#8230;</string>
-    <string name="message_item_date">defautl date</string>
-    <string name="message_item_name">Prénom Nom</string>
-    <string name="message_item_name_activity">Nom de l\'activité</string>
-    <string name="message_item_last_message">Dernier message</string>
-
-
-    <!-- add activity page -->
-    <string name="title_add_activity_main">Add activity</string>
-
-    <!-- profile page -->
-    <string name="title_profile_activity_main">Profile page</string>
-
+    <string name="message_activity_search">Rechercher...</string>
 </resources>
