@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gym_card_bg"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="4dp"
+    android:padding="12dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgPartner"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@drawable/logo_gymavout"
+        app:shapeAppearanceOverlay="@style/CircleImage" />
+
+    <TextView
+        android:id="@+id/txtPartnerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/imgPartner"
+        android:text="Nom"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtLastMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtPartnerName"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@id/imgPartner"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Dernier message..."
+        android:textColor="#9CA3AF"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/txtTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="14:20"
+        android:textColor="#9CA3AF"
+        android:textSize="12sp" />
+
+</RelativeLayout>

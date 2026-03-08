@@ -31,6 +31,14 @@
             android:name=".SettingsActivity"
             android:exported="false"
             android:label="Paramètres" />
+        <activity
+            android:name=".ActivityDetailActivity"
+            android:exported="false"
+            android:label="Détails de l'activité" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false"
+            android:label="Message" />
     </application>
 
 </manifest>

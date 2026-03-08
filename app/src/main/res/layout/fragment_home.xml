@@ -23,24 +23,58 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:src="@drawable/logo_gymavout" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:text="Gym"
                 android:textColor="#FFFFFF"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Avout"
                 android:textColor="@color/gym_green_accent"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@drawable/search_bar_bg"
+                android:drawableStart="@drawable/ic_search_scaled"
+                android:drawablePadding="12dp"
+                android:hint="Rechercher une activité..."
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="@color/white"
+                android:textColorHint="#9CA3AF"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/btnFilter"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/search_bar_bg"
+                android:padding="12dp"
+                android:src="@drawable/ic_parameters"
+                app:tint="@color/white" />
         </LinearLayout>
     </LinearLayout>
 

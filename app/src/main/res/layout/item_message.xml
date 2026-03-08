@@ -1,102 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@color/gym_dark_bg"
-    app:cardElevation="0dp">
+    android:orientation="vertical"
+    android:padding="4dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <!-- Message de l'autre (gauche) -->
+    <RelativeLayout
+        android:id="@+id/layoutPartnerMessage"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:layout_gravity="start">
 
-        <FrameLayout
-            android:id="@+id/profileContainer"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgMessagePartner"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/logo_gymavout"
+            app:shapeAppearanceOverlay="@style/CircleImage" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imgUser"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:scaleType="centerCrop"
-                app:shapeAppearanceOverlay="@style/CircleImage"
-
-                tools:src="@tools:sample/avatars"
-                android:src="@drawable/ic_launcher_foreground" />
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/imgMessagePartner"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:padding="12dp">
 
             <TextView
-                android:id="@+id/txtBadge"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="top|end"
-                android:background="@drawable/badge_notification"
-                android:gravity="center"
-                android:text="2"
+                android:id="@+id/txtPartnerMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message"
                 android:textColor="@color/white"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:visibility="visible" />
-        </FrameLayout>
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txtPartnerTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="14:20"
+                android:textColor="#9CA3AF"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Mon message (droite) -->
+    <LinearLayout
+        android:id="@+id/layoutMyMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_stat_teal"
+        android:orientation="vertical"
+        android:padding="12dp">
 
         <TextView
-            android:id="@+id/txtTitle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Marc Dubois"
-            android:textColor="@color/text_white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/txtDate"
-            app:layout_constraintStart_toEndOf="@id/profileContainer"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/txtActivity"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:text="Session de Football 5v5"
-            android:textColor="@color/gym_green_accent"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/txtTitle"
-            app:layout_constraintTop_toBottomOf="@id/txtTitle" />
-
-        <TextView
-            android:id="@+id/txtLastMessage"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Super! On se retrouve à 18h alors 👍"
-            android:textColor="@color/text_gray"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/txtTitle"
-            app:layout_constraintTop_toBottomOf="@id/txtActivity" />
-
-        <TextView
-            android:id="@+id/txtDate"
+            android:id="@+id/txtMyMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="14:32"
-            android:textColor="@color/text_gray"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="Mon message"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="16dp"
-            android:background="#1AFFFFFF"
-            app:layout_constraintTop_toBottomOf="@id/txtLastMessage" />
+        <TextView
+            android:id="@+id/txtMyTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="4dp"
+            android:text="14:22"
+            android:textColor="#9CA3AF"
+            android:textSize="10sp" />
+    </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</com.google.android.material.card.MaterialCardView>
+</LinearLayout>

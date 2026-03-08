@@ -10,7 +10,11 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ServerValue
+import com.google.firebase.database.ValueEventListener
 import java.util.Calendar
 
 class AddFragment : Fragment(R.layout.fragment_add) {
@@ -31,7 +35,6 @@ class AddFragment : Fragment(R.layout.fragment_add) {
         val etMaxParticipants = view.findViewById<EditText>(R.id.etMaxParticipants)
         val spinnerLevels = view.findViewById<Spinner>(R.id.spinnerLevels)
 
-        // Gestion de la Date
         etDate.setOnClickListener {
             val c = Calendar.getInstance()
             val year = c.get(Calendar.YEAR)
@@ -44,7 +47,6 @@ class AddFragment : Fragment(R.layout.fragment_add) {
             dpd.show()
         }
 
-        // Gestion de l'Heure
         etTime.setOnClickListener {
             val c = Calendar.getInstance()
             val hour = c.get(Calendar.HOUR_OF_DAY)
@@ -67,7 +69,6 @@ class AddFragment : Fragment(R.layout.fragment_add) {
             val level = spinnerLevels.selectedItem?.toString() ?: ""
             val userId = auth.currentUser?.uid
 
-            // Vérification des champs obligatoires
             if (title.isEmpty() || sport.isEmpty() || description.isEmpty() || 
                 location.isEmpty() || date.isEmpty() || time.isEmpty() || 
                 maxParticipants.isEmpty() || level.isEmpty()) {
@@ -77,37 +78,65 @@ class AddFragment : Fragment(R.layout.fragment_add) {
             }
 
             if (userId != null) {
-                val activityId = database.child("activities").push().key
-                val activityData = mapOf(
-                    "id" to activityId,
-                    "titre" to title,
-                    "sport" to sport,
-                    "description" to description,
-                    "lieu" to location,
-                    "date" to date,
-                    "heure" to time,
-                    "maxParticipants" to maxParticipants,
-                    "niveau" to level,
-                    "createurId" to userId,
-                    "timestamp" to System.currentTimeMillis()
-                )
+                btnPublish.isEnabled = false
+                btnPublish.text = "Publication..."
 
-                activityId?.let {
-                    database.child("activities").child(it).setValue(activityData)
-                        .addOnSuccessListener {
-                            Toast.makeText(context, "Activité publiée !", Toast.LENGTH_SHORT).show()
-                            // Vider les champs
-                            etTitle.text.clear()
-                            etDescription.text.clear()
-                            etLocation.text.clear()
-                            etDate.text.clear()
-                            etTime.text.clear()
-                            etMaxParticipants.text.clear()
+                val activityId = database.child("activities").push().key
+                
+                database.child("users").child(userId).child("profileImageUrl").addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        val userImageUrl = snapshot.getValue(String::class.java) ?: ""
+                        
+                        val activityData = mutableMapOf<String, Any>(
+                            "id" to (activityId ?: ""),
+                            "titre" to title,
+                            "sport" to sport,
+                            "description" to description,
+                            "lieu" to location,
+                            "date" to date,
+                            "heure" to time,
+                            "maxParticipants" to maxParticipants,
+                            "niveau" to level,
+                            "createurId" to userId,
+                            "organisateurImage" to userImageUrl,
+                            "timestamp" to System.currentTimeMillis(),
+                            "nbInscrits" to 1 // Le créateur est le premier inscrit
+                        )
+
+                        activityId?.let { id ->
+                            database.child("activities").child(id).setValue(activityData)
+                                .addOnSuccessListener {
+                                    // Ajouter le créateur à la liste des participants
+                                    database.child("activities").child(id).child("participants").child(userId).setValue(true)
+
+                                    // Incrémenter le compteur de créations de l'utilisateur
+                                    database.child("users").child(userId).child("creations")
+                                        .setValue(ServerValue.increment(1))
+                                    
+                                    Toast.makeText(context, "Activité publiée !", Toast.LENGTH_SHORT).show()
+                                    btnPublish.isEnabled = true
+                                    btnPublish.text = "Publier l'activité"
+                                    
+                                    etTitle.text.clear()
+                                    etDescription.text.clear()
+                                    etLocation.text.clear()
+                                    etDate.text.clear()
+                                    etTime.text.clear()
+                                    etMaxParticipants.text.clear()
+                                }
+                                .addOnFailureListener { e ->
+                                    btnPublish.isEnabled = true
+                                    btnPublish.text = "Publier l'activité"
+                                    Toast.makeText(context, "Erreur : ${e.message}", Toast.LENGTH_SHORT).show()
+                                }
                         }
-                        .addOnFailureListener { e ->
-                            Toast.makeText(context, "Erreur : ${e.message}", Toast.LENGTH_SHORT).show()
-                        }
-                }
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+                        btnPublish.isEnabled = true
+                        btnPublish.text = "Publier l'activité"
+                    }
+                })
             }
         }
     }

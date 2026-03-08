@@ -17,14 +17,14 @@
         android:padding="16dp">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imgUser"
+            android:id="@+id/profileImage"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:scaleType="centerCrop"
+            android:src="@drawable/logo_gymavout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/CircleImage"
-            tools:src="@tools:sample/avatars" />
+            app:shapeAppearanceOverlay="@style/CircleImage" />
 
         <TextView
             android:id="@+id/txtActivityTitle"
@@ -37,7 +37,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/badgeCategory"
-            app:layout_constraintStart_toEndOf="@id/imgUser"
+            app:layout_constraintStart_toEndOf="@id/profileImage"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -48,7 +48,7 @@
             android:paddingHorizontal="8dp"
             android:paddingVertical="4dp"
             android:text="Sport"
-            android:textColor="@color/gym_green_accent"
+            android:textColor="@color/white"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -65,7 +65,7 @@
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imgUser" />
+            app:layout_constraintTop_toBottomOf="@id/profileImage" />
 
         <LinearLayout
             android:id="@+id/detailsLayout"
@@ -86,7 +86,7 @@
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:src="@android:drawable/ic_menu_mylocation"
+                    android:src="@drawable/ic_location_scaled"
                     app:tint="@color/gym_green_accent" />
 
                 <TextView
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="Lieu"
-                    android:textColor="@color/text_gray"
+                    android:textColor="#9CA3AF"
                     android:textSize="13sp" />
             </LinearLayout>
 
@@ -109,7 +109,7 @@
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:src="@android:drawable/ic_menu_my_calendar"
+                    android:src="@drawable/ic_calendar_scaled"
                     app:tint="@color/gym_green_accent" />
 
                 <TextView
@@ -118,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="Date et Heure"
-                    android:textColor="@color/text_gray"
+                    android:textColor="#9CA3AF"
                     android:textSize="13sp" />
             </LinearLayout>
 
@@ -132,7 +132,7 @@
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:src="@android:drawable/ic_menu_share"
+                    android:src="@drawable/ic_person"
                     app:tint="@color/gym_green_accent" />
 
                 <TextView
@@ -141,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="0 participants"
-                    android:textColor="@color/text_gray"
+                    android:textColor="#9CA3AF"
                     android:textSize="13sp" />
             </LinearLayout>
 
@@ -155,7 +155,7 @@
             android:paddingHorizontal="8dp"
             android:paddingVertical="4dp"
             android:text="Niveau"
-            android:textColor="@color/text_gray"
+            android:textColor="@color/white"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />

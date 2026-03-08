@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:width="20dp"
-        android:height="20dp"
+        android:width="15dp"
+        android:height="15dp"
         android:gravity="center">
         <bitmap
-            android:src="@drawable/ic_menu_search"
-            android:tint="#9CA3AF" />
+            android:src="@drawable/ic_check_scaled"
+            android:tint="@color/gym_green_accent" />
     </item>
 </layer-list>
