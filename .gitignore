@@ -1,36 +1,29 @@
-# Fichiers de projet Android Studio et Gradle
-*.iml
+# Aide à la navigation
 .gradle
 /local.properties
-/.idea/git
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+/.idea/
 .DS_Store
 /build
 /captures
 .externalNativeBuild
 .cxx
-local.properties
 
-# Fichiers de compilation et de sortie
-build/
+# Android Studio / IntelliJ
+*.iml
+*.ipr
+*.iws
+
+# Compilation et sorties
+bin/
+gen/
+out/
 app/build/
-*.class
-*.apk
-*.aar
 
 # Fichiers logs
 *.log
 
-# Fichiers Kotlin / Java
-.kotlin/
-.idea/kotlinPolyglot.xml
-
-# Secrets et configurations spécifiques à l'utilisateur
+# Secrets (TRÈS IMPORTANT)
 google-services.json
-.DS_Store
+
+# Divers
 Thumbs.db
