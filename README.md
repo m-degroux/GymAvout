@@ -59,9 +59,3 @@
    - Synchronisez les fichiers Gradle.
    - Lancez l'application sur un émulateur ou un appareil physique.
 
-## Licence
-
-Distribué sous la licence MIT. Voir `LICENSE` pour plus d'informations.
-
----
-Développé avec ❤️ par Mathieu.
