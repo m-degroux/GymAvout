@@ -1,4 +1,4 @@
-# GymAvout 🏋️‍♂️🏐
+# GymAvout
 
 **GymAvout** est une application Android sociale conçue pour connecter les passionnés de sport. Elle permet aux utilisateurs de créer, découvrir et rejoindre des séances de sport (Football, Tennis, Running, etc.) près de chez eux.
 
@@ -40,25 +40,25 @@
 <table style="width: 100%;">
   <tr>
     <td align="center" width="33%">
-      <img src="https://github.com/votre-username/GymAvout/blob/main/screenshots/login.jpg" width="200" /><br>
+      <img src="https://github.com/m-degroux/GymAvout/blob/main/screenshots/login.jpg" width="200" /><br>
       <b>Connexion</b>
     </td>
     <td align="center" width="33%">
-      <img src="https://github.com/votre-username/GymAvout/blob/main/screenshots/home.jpg" width="200" /><br>
+      <img src="https://github.com//m-degroux/GymAvout/blob/main/screenshots/home.jpg" width="200" /><br>
       <b>Accueil (Activités)</b>
     </td>
     <td align="center" width="33%">
-      <img src="https://github.com/votre-username/GymAvout/blob/main/screenshots/profile.jpg" width="200" /><br>
+      <img src="https://github.com//m-degroux/GymAvout/blob/main/screenshots/profile.jpg" width="200" /><br>
       <b>Profil</b>
     </td>
   </tr>
   <tr>
     <td align="center" width="33%">
-      <img src="https://github.com/votre-username/GymAvout/blob/main/screenshots/chat.jpg" width="200" /><br>
+      <img src="https://github.com//m-degroux/GymAvout/blob/main/screenshots/chat.jpg" width="200" /><br>
       <b>Messagerie</b>
     </td>
     <td align="center" width="33%">
-      <img src="https://github.com/votre-username/GymAvout/blob/main/screenshots/add.jpg" width="200" /><br>
+      <img src="https://github.com//m-degroux/GymAvout/blob/main/screenshots/add.jpg" width="200" /><br>
       <b>Création d'activité</b>
     </td>
     <td align="center" width="33%">
