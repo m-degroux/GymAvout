@@ -44,21 +44,21 @@
       <b>Connexion</b>
     </td>
     <td align="center" width="33%">
-      <img src="https://github.com//m-degroux/GymAvout/blob/main/screenshots/home.jpg" width="200" /><br>
+      <img src="https://github.com/m-degroux/GymAvout/blob/main/screenshots/home.jpg" width="200" /><br>
       <b>Accueil (Activités)</b>
     </td>
     <td align="center" width="33%">
-      <img src="https://github.com//m-degroux/GymAvout/blob/main/screenshots/profile.jpg" width="200" /><br>
+      <img src="https://github.com/m-degroux/GymAvout/blob/main/screenshots/profile.jpg" width="200" /><br>
       <b>Profil</b>
     </td>
   </tr>
   <tr>
     <td align="center" width="33%">
-      <img src="https://github.com//m-degroux/GymAvout/blob/main/screenshots/chat.jpg" width="200" /><br>
+      <img src="https://github.com/m-degroux/GymAvout/blob/main/screenshots/chat.jpg" width="200" /><br>
       <b>Messagerie</b>
     </td>
     <td align="center" width="33%">
-      <img src="https://github.com//m-degroux/GymAvout/blob/main/screenshots/add.jpg" width="200" /><br>
+      <img src="https://github.com/m-degroux/GymAvout/blob/main/screenshots/add.jpg" width="200" /><br>
       <b>Création d'activité</b>
     </td>
     <td align="center" width="33%">
